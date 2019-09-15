@@ -20,7 +20,11 @@ public abstract class Account implements IRate {
 		// Set account number
 		index++;
 		this.accountNumber = setAccountNumber();
+		
+		setRate();
 	}
+	
+	public abstract void setRate();
 	
 	private String setAccountNumber() {
 		String lastTwoOfSIN = SIN.substring(SIN.length()-2, SIN.length());
@@ -35,7 +39,8 @@ public abstract class Account implements IRate {
 		System.out.println(
 				"NAME: " + name +
 				"\nACCOUNT NUMBER: " + accountNumber + 
-				"\nBALANCE: " + balance
+				"\nBALANCE: " + balance +
+				"\nRATE: " + rate + "%"
 				);
 	}
 
